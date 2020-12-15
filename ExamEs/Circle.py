@@ -1,3 +1,5 @@
+# © Guglielmo Del Sarto -> guglielmo.delsarto@outlook.com
+
 # #
 # I build the class:
 # #

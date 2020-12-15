@@ -1,9 +1,14 @@
+# © Guglielmo Del Sarto -> guglielmo.delsarto@outlook.com
+
 # #
 # Part 1:  methods
 # #
 
 # I want to implement this method scrolling
 # the two lists at the same time. And just once!!
+#
+# @param list1, list2 are list of integers
+# @return a list of integers
 def mergeWithOddsFirst(list1, list2):
     # I create an auxiliary vector
     merged = [None] * (len(list1)*2)
@@ -25,6 +30,9 @@ def mergeWithOddsFirst(list1, list2):
     return merged
 
 # A useful auxiliary method:
+#
+# @param n which is intended to be integer
+# @return bool
 def isEven(n):
     if (n%2 == 0):
         return True

@@ -1,8 +1,13 @@
+# © Guglielmo Del Sarto -> guglielmo.delsarto@outlook.com
+
 # #
 # Part 1 (function)
 # #
 
 # My task-performing method:
+#
+# @param word is a string, subs a char
+# @return a string
 def removeVowel(word, subs):
     isSubsAVowel = isAVowel(subs)
     outputString = ""
@@ -14,6 +19,9 @@ def removeVowel(word, subs):
     return outputString
 
 # I change every voewl to X:
+#
+# @param string is a string, x a char
+# @return a string
 def performWithChange(string, x):
     outputString = ""
     for i in range(len(string)):
@@ -24,6 +32,9 @@ def performWithChange(string, x):
     return outputString
 
 # I delete every voewl:
+#
+# @param string is a string
+# @return a string
 def performWithDelete(string):
     outputString = ""
     for i in range(len(string)):
@@ -34,6 +45,9 @@ def performWithDelete(string):
     return outputString
 
 # Count consonant:
+#
+# @param string is a string
+# @return a string
 def countConsonant(string):
     outputString = ""
     i = 0
@@ -54,6 +68,9 @@ def countConsonant(string):
 
 
 # Method to know whether a char is a vowel or not:
+#
+# @param char is a char
+# @return bool
 def isAVowel(char):
     isCharAVowel = False
     asciiCodes = [65, 69, 73, 79, 85]
