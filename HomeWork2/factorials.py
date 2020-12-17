@@ -19,5 +19,5 @@ def recursionFactorial(n):
 # #
 # Part 2: some testing
 # #
-a = 3.5
+a = 3
 print(recursionFactorial(a))
