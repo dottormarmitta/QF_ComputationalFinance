@@ -89,6 +89,6 @@ print("I expect iib2i:")
 print(removeVowel("aabba", "i"))
 print("I expect null:")
 print(removeVowel("aaa", "k"))
-print("I expect b5r3:")
-print(removeVowel("aeioubbbbbaerrruiu", "k"))
+print("I expect ooooob5oor3ooo:")
+print(removeVowel("aeioubbbbbaerrruiu", "o"))
 

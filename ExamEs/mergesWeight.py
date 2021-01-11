@@ -31,7 +31,7 @@ def getWeight(myString):
     localString = myString.lower()
     weight = 0
     for i in range(len(myString)):
-        weight += ord(localString[i])-96 # See ASCII table why this 96
+        weight += ord(localString[i])-97 # See ASCII table why this 96
     return weight
 
 # #
