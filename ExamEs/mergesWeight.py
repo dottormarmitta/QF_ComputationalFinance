@@ -13,9 +13,8 @@ def mergesW(strings):
     # Keys are the weight, value the strings
     # So this is like {4: "e", 10: "age", ...}
     myWeightedString = {}
-    for i in range(len(strings)):
-        currentWeight = getWeight(strings[i])
-        myWeightedString[currentWeight] = strings[i]
+    for currentWord in strings:
+        myWeightedString[getWeight(currentWord)] = currentWord
     myWeights = list(myWeightedString.keys())
     myWeights.sort() # "I" just sort the keys: one line but very time consuming!!!
     sortedList = [None]*len(strings)
