@@ -54,7 +54,7 @@ def countConsonant(string):
     while (i < len(string)):
         count = 1
         k = i+1
-        while (k < len(string) and string[k] == string[i] and isAVowel(string[i]) == False):
+        while (k < len(string) and string[k] == string[i] and not isAVowel(string[i]) and not isDigit(string[i])):
             i += 1
             k += 1
             count += 1
@@ -79,6 +79,18 @@ def isAVowel(char):
             isCharAVowel = True
             break
     return isCharAVowel
+# Method to know whether a char is a digit or a space:
+#
+# @param char is a char
+# @return bool
+def isDigit(char):
+    isCharADigit = False
+    asciiCodes = [i+48 for i in range(10)]
+    for code in asciiCodes:
+        if (ord(char) == code or char == " "):
+            isCharADigit = True
+            break
+    return isCharADigit
 
 # #
 # Part 2: some testing 
@@ -91,4 +103,6 @@ print("I expect null:")
 print(removeVowel("aaa", "k"))
 print("I expect ooooob5oor3ooo:")
 print(removeVowel("aeioubbbbbaerrruiu", "o"))
+print("I expect ob2oo666 ooo t4 55:")
+print(removeVowel("abbaa666 eee tttt 55", "o"))
 
