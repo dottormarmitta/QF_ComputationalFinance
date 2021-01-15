@@ -204,11 +204,6 @@ class SpotRateConverter():
             orderedRates[tuple([0]) + t] = rawRates[t]
         return orderedRates
     
-
-
-
-
-
 class ForwardRateConverter():
     """
     Convert from one rate type to another. Given FORWARD Bond, Rate or Yield curve

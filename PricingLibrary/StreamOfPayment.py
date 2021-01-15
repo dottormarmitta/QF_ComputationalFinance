@@ -37,31 +37,32 @@ class StreamOfPayments:
         localDict = {}
         for i in range(len(paymentsValue)):
             localDict[paymentsTime[i]] = [paymentsValue[i], discountingFactors[i]]
-            print(i)
-        print(localDict)
         self.paymentStream = localDict
 
-    #
-
-    # First useful method: Value today.
-    #
-    #         p1     p2     p3               pn
-    #  |------|------|------|------|\/|------|------|---->
-    #  0      t1     t2     t3               tn          time
-    #
-    # We know that:
-    # V(0) = p1*d1 + p2*d2 + p3*d3 + ... + pn*dn
-    # 
-    # where pi is the payment at time i and d1 is the discounting factor
-    # between [0,i]
     def getPresentValue(self):
+        """
+              p1     p2     p3               pn
+        |------|------|------|------...------|------|---->
+        0      t1     t2     t3               tn          time
+    
+        We know that:
+        V(0) = p1*d1 + p2*d2 + p3*d3 + ... + pn*dn
+     
+        where pi is the payment at time i and d1 is the discounting factor
+        between [0,i]
+        """
         presentValue = 0
         for time in self.paymentStream:
             presentValue += self.paymentStream[time][0]*self.paymentStream[time][1]
-            print(presentValue)
         return presentValue
-
-
-    #
+    
+    def getTir(self):
+        """
+        This method returns 
+        """
+        presentValue = 0
+        for time in self.paymentStream:
+            presentValue += self.paymentStream[time][0]*self.paymentStream[time][1]
+        return presentValue
 
     
