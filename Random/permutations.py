@@ -11,14 +11,15 @@ Devo assegnarle a 5 persone. Devo quindi fare una
 permutazione di 5 oggetti. So che ci sono 5! possibilità
 diverse. (5! = 120)
 
+Ciascun erede sceglie un numero tra: {1, 2, 3, 4, 5}
 Le porzioni di eredità vengono assegnate in ordine:
 
 Esempio:
 Viene estratta la combinazione: [B, D, E, A, C]
-- al primo erede verrà assegnata B
-- al secondo erede verrà assegnata D
+- al primo erede (numero 1) verrà assegnata B
+- al secondo (numero 2) erede verrà assegnata D
 ...
-- al quinto erede verrà assegnata C
+- al quinto (numero 5) erede verrà assegnata C
 
 L'idea è la seguente:
 1. Genero le varie possibilità.
@@ -28,19 +29,22 @@ L'idea è la seguente:
 3. Suddivido le possibili combinazioni in gruppi di 4.
     in questo modo avrò 30 gruppi (120/4) ciascuno contenente
     4 possibili allocazioni (tutte diverse ed in ordine casuale).
+    Nel contratto scrivo i vari gruppi.
 
-4. Controllo la prima ruota del lotto nazionale. Ha 90 numeri. Per
-    scegliere in quale gruppo dei 30 selezionare l'allocazione 
-    vincente, seguo la seguente regola ([1-3] = esce 1, 2 oppure 3)
+4. Controllo la prima ruota del lotto nazionale (che ha 90 numeri). Per
+    scegliere il gruppo vincente adotto la seguente regola:
     ° [1-3] -> primo gruppo
     ° [4-6] -> secondo gruppo
     ° ...
     ° [88-90] -> trentesimo gruppo
+
+    dove [n-k] = "E' uscito un numero compreso tra n e k". Ad esempio:
+    [7-9] = {7, 8, 9} (estremi dunque COMPRESI)
     N.B: ogni gruppo ha la stessa probabilità di essere estratto (p = 3/90 = 0.0333)
 
-5. Nel punto 4. ho trovato il gruppo vincente. Adesso ho devo solo
-    scegliere quale delle 4 combinazioni rimanenti scegliere. Guardo alla II e alla III 
-    ruota. Il numero vincente di ogni ruota sarà (con ugual probabilità) pari o dispari. 
+5. Nel punto 4. ho trovato il gruppo vincente. Adesso devo solo scegliere quale
+    delle 4 combinazioni rimanenti scegliere. Guardo alla II e alla III ruota. 
+    Il numero vincente di ogni ruota sarà (con ugual probabilità) pari o dispari. 
     Dunque, chiamando "[p,d] = la II ruota è pari, la III è dispari" adotto la seguente
     regola:
     - [p,p] -> prima combinazione
